@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div style="color:blue">
+        <form action="{{ url_for('predict')}}" method="post">
+            <h2>Heart Disease Prediction</h2>
+            <h3>Age of Client</h3>
+            <input id="first" name="Age" type="number ">
+            <h3>Blood Pressure</h3><br><input id="second" name="RestingBP" required="required">
+            <h3>Cholesterol Levels</h3><input id="third" name="Cholesterol" required="required">
+            <h3>Max Heart Rate</h3><br><input id="fourth" name="MaxHR" required="required">
+            <h3>Oldpeak</h3><br><input id="fifty" name="Oldpeak" required="required">
+            <h3>Gender</h3><br><select name="Sex_M" id="sex" required="required">
+                <option value="M">Male</option>
+                <option value="F">Female</option>
+            </select>
+            <h3>Chest Pain Type</h3><br><select name="ChestPainType" id="resea" required="required">
+                <option value="ATA">ATA</option>
+                <option value="NAP">NAP</option>
+                 <option value="TA">TA</option>
+                 <option value="ASY">ASY</option>
+            </select>
+            <h3>FastingBS</h3><br><select name="FastingBS_1" id="research" required="required">
+                <option value=1>FastingBS_1</option>
+                <option value=0>FastingBS_0</option>
+            </select>
+            <h3>RestingECG</h3><br><select name="RestingECG" id="sixty" required="required">
+                <option value="Normal">Normal</option>
+                <option value="ST">ST</option>
+                 <option value="LVH">LVH</option>
+            </select>
+            <h3>ExerciseAngina</h3><br><select name="ExerciseAngina_Y" id="ExerciseAngina" required="required">
+                <option value="Y">ExerciseAngina_Y</option>
+                <option value="N">ExerciseAngina_N</option>
+            </select>
+            <h3>ST_Slope_Flat</h3><br><select name="ST_Slope_Flat" id="slope" required="required">
+                <option value="Flat">Flat</option>
+                <option value="Up">Up</option>
+                 <option value="Down">Down</option>
+            </select>
+            <br><br><button id="sub" type="submit ">Predict Heart Disease</button>
+            <br>
+
+
+
+
+        </form>
+
+
+
+        <br><br><h3>{{ prediction_text }}</h3>
+    </div>
+
+
+
+
+    <style>
+        body {
+            background-color: lightslategray;
+            text-align: center;
+            padding: 0px;
+        }
+
+        #research {
+            font-size: 18px;
+            width: 100px;
+            height: 23px;
+            top: 23px;
+        }
+
+        #box {
+            border-radius: 60px;
+            border-color: 45px;
+            border-style: solid;
+            font-family: cursive;
+            text-align: center;
+            background-color: rgb(168, 131, 61);
+            font-size: medium;
+            position: absolute;
+            width: 700px;
+            bottom: 9%;
+            height: 850px;
+            right: 30%;
+            padding: 0px;
+            margin: 0px;
+            font-size: 14px;
+        }
+
+        #sex {
+            width: 100px;
+            height: 43px;
+            text-align: center;
+            border-radius: 14px;
+            font-size: 20px;
+        }
+
+        #sex:hover {
+            background-color: coral;
+        }
+
+        #research {
+            width: 99px;
+            height: 43px;
+            text-align: center;
+            border-radius: 14px;
+            font-size: 18px;
+        }
+
+        #research:hover {
+            background-color: coral;
+        }
+
+        #resea {
+            width: 99px;
+            height: 43px;
+            text-align: center;
+            border-radius: 14px;
+            font-size: 18px;
+        }
+
+        #resea:hover {
+            background-color: coral;
+        }
+
+        #sub {
+            width: 200px;
+            height: 60px;
+            text-align: center;
+            border-radius: 14px;
+            font-size: 18px;
+        }
+
+        #sub:hover {
+            background-color: darkcyan;
+        }
+
+        #first {
+            border-radius: 14px;
+            height: 25px;
+            font-size: 20px;
+            text-align: center;
+        }
+
+        #second {
+            border-radius: 14px;
+            height: 25px;
+            font-size: 20px;
+            text-align: center;
+        }
+
+        #third {
+            border-radius: 14px;
+            height: 25px;
+            font-size: 20px;
+            text-align: center;
+        }
+
+        #fourth {
+            border-radius: 14px;
+            height: 25px;
+            font-size: 20px;
+            text-align: center;
+        }
+        #fifty {
+            border-radius: 14px;
+            height: 25px;
+            font-size: 20px;
+            text-align: center;
+        }
+        #sixty {
+            border-radius: 14px;
+            height: 25px;
+            font-size: 20px;
+            text-align: center;
+        }
+        #slope {
+            border-radius: 14px;
+            height: 25px;
+            font-size: 20px;
+            text-align: center;
+        }
+        #ExerciseAngina {
+            border-radius: 14px;
+            height: 25px;
+            font-size: 20px;
+            text-align: center;
+        }
+    </style>
+</body>
+
+</html>
